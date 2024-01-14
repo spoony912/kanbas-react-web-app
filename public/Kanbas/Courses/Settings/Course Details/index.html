@@ -1,0 +1,221 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Couse Details</h3>
+        <table width="100%">
+            <tr>
+                <td>
+                    Image: 
+                </td>
+                <td>
+                    <form>
+                        <label for="imageUpload"></label>
+                        <input type="file" id="imageUpload" name="image" accept="image/*"> <!--choose file not choose image-->
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name: 
+                </td>
+                <td>
+                    CS5610-02 Web Development SEC 02 Spring 2024 [ONLINE]
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Course Code: 
+                </td>
+                <td>
+                    CS5610.02.202401
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Blueprint Course:
+                </td>
+                 <td>
+                    No
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                    Course Template: 
+                </td>
+                <td>
+                    <input type="checkbox" value="COURSE-TEMPLATE" name="check-template" id="chkbox-course-template" />
+                    <label for="chkbox-course-template">Enable course as a Course Template</label><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Time Zone:
+                </td>
+                <td>
+                    <select>
+                        <option selected>Eastern Time (US & Canada) (-05:00/-04:00)</option>                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SIS ID: 
+                </td>
+                <td>
+                    CS5610.02.202401
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Subaccount: 
+                </td>
+                <td>
+                    <span style="color: rgb(168, 11, 11);">CS Graduate</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Term: 
+                </td>
+                <td>
+                    202401_Spring 2024 Semester Spring Term
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    Participation: 
+                </td>
+                <td >
+                    <select>
+                        <option selected >Term</option>
+                    </select>
+                    <br/>
+                    <span style="font-size:13px"> Course participation is limited to<strong> term</strong> start and end dates.</span>
+                    <br/>
+                    <strong>Start</strong> <br/>
+                    <input type="date"> <br/>
+                    <strong>End</strong> <br/>
+                    <input type="date"> <br/>
+                    <input type="checkbox" value="COURSE-PARTICIPATION-BEFORE" name="check-participation-before" id="chkbox-course-participation-before" />
+                    <label for="chkbox-course-participation-before">Restrict students from viewing course before term start date</label><br/>
+                    <input type="checkbox" value="COURSE-PARTICIPATION-AFTER" name="check-participation-after" id="chkbox-course-participation-after" />
+                    <label for="chkbox-course-participation-after">Restrict students from viewing course after term end date</label><br/>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    Default due time: 
+                </td>
+                <td>
+                    <select>
+                        <option selected >Account default (11:59pm) </option>
+                    </select>
+                    <br/>
+                    <span style="font-size: 11px;">This influence the user interface for setting due dates. It does not change the time due for any existing assignments</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    Language: 
+                </td>
+                <td>
+                    <select>
+                        <option selected>Not set (user-configurable, defaults to English(Unit...))</option>
+                    </select>
+                    <br/>
+                    <span style="font-size: 11px;">This will override any user/system language preferences. This is only recommended for foreign language courses</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Large Course: 
+                </td>
+                <td>
+                    <input type="checkbox" value="COURSE-LARGE-COURSE" name="check-large-course" id="chkbox-course-large-course" />
+                    <label for="chkbox-course-large-course">Launch SpeedGrader Filtered by Student Group</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Grading Scheme: 
+                </td>
+                <td>
+                    <input type="checkbox" value="COURSE-GRADING-SCHEME" name="check-grading-scheme" id="chkbox-grading-scheme" />
+                    <label for="chkbox-grading-scheme"> Enable course grading scheme</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    License: 
+                </td>
+                <td>
+                    <select style="vertical-align: middle;">
+                        <option selected >Private (Copyrighted) </option>
+                    </select>
+                    <img src="question-mark.jpg" style="vertical-align: middle;" width="20px">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    File Copyright: 
+                </td>
+                <td>
+                    <input type="checkbox" value="COURSE-FILE-COPYRIGHT" name="check-file-copyright" id="chkbox-file-copyright"/>
+                    <label for="chkbox-file-copyright">Copyright and license information must be provided for files before they are published.</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    Visibility: 
+                </td>
+                <td>
+                    If you need to make your course public please contact your administrator/support. <br/>
+                    <select style="vertical-align: middle;">
+                        <option selected>Course</option>
+                    </select>
+                    <img src="question-mark.jpg" style="vertical-align: middle;" width="20px"> <br/>
+                    
+                    <input type="checkbox" value="COURSE-VISIBILITY" name="check-visibility" id="chkbox-visibility" />
+                    <label for="chkbox-visibility"><span style="font-size: 13px; vertical-align: top";>Include this course in the public course index</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Format: 
+                </td>
+                <td>
+                    <select>
+                        <option selected>On-Campus</option>
+                    </select>
+
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mastery Paths: 
+                </td>
+                <td>
+                    <input type="checkbox" value="COURSE-FORMAT" name="check-format" id="chkbox-format" />
+                    <label for="chkbox-format"><span style="font-size: 13px; vertical-align: top";>Enable individual learning paths for students based on assessment</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    Description: 
+                </td>
+                <td>
+                    <textarea cols="50" rows="8"></textarea> <br/>
+                    <span style="color: rgb(168, 11, 11); font-size: 14px;">    more options </span>
+                </td>
+            </tr>
+        </table>
+       
+        <div style="text-align: center;">
+            <button type="button" onclick="window.location.href='/Kanbas/Courses/Settings/Course Details/screen.html';">Update Course Details</button>
+        </div>
+        
+    </body>
+</html>

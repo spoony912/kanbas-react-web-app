@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <title>Lab 1</title>
+    </head>
+    <body>
+        <h1>HTML Examples</h1>
+        <h2>Heading Tags</h2>
+<!-----------------------------------------------------------Paragraph------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <p>
+        This is the first paragraph. The paragraph tag is used to format vertical gaps between long pieces of text like this one.
+        </p>
+        <p>
+        This is the second paragraph. Even though we added a deliberate gap between the paragraph above and this paragraph, by default browsers render them as one contiguous piece of text as shown here on the right.
+        </p>
+        <p>
+        This is the third paragraph. Wrap each paragraph with the paragraph tag to tell browsers to render the gaps.
+        </p>
+
+        <h2>List Tags</h2>
+<!-----------------------------------------------------------Order list tag------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->        
+        <h3>Ordered List Tag</h3>
+        How to make pancakes:
+        <ol>
+            <li>Mix dry ingredients.</li>
+            <li>Add wet ingredients.</li>
+            <li>Stir to combine.</li>
+            <li>Heat a skillet or griddle.</li>
+            <li>Pour batter onto the skillet.</li>
+            <li>Cook until bubbly on top.</li>
+            <li>Flip and cook the other side.</li>
+            <li>Serve and enjoy!</li>
+        </ol>
+
+<!------------------------------------------------------------Unordered list tag------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->        
+        <h3>Unordered List Tag</h3>
+        My favorite books(in no particular order)
+        <ul>
+            <li>Dune</li>
+            <li>Lord of Rings</li>
+            <li>Ender's Game</li>
+            <li>Red Mars</li>
+            <li>The Forever War</li>
+        </ul>
+
+        <!-- table -->
+        <!-- thead: declared a row of headings-->
+        <!-- tbody: the main data content rows of the table-->
+        <!-- tr: the start of a row-->
+        <!-- th: a table cell as a heading-->
+        <!-- td: a table data cell-->
+        <!-- tfoot: a row as a footer-->
+
+        <h2>Table Tag</h2>
+<!-----------------------------------------------------------Table------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->        
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Quiz</th>
+                    <th>Topic</th>
+                    <th>Date</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Q1</td>
+                    <td>HTML</td>
+                    <td>2/3/21</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>Q2</td>
+                    <td>CSS</td>
+                    <td>2/10/21</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>Q3</td>
+                    <td>JavaScript</td>
+                    <td>2/17/21</td>
+                    <td>95</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Average</td>
+                    <td>90</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h2>Image Tag</h2>
+        Loading an image from the internet:<br/>
+<!-----------------------------------------------------------Image------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+ 
+        <img width="100%"
+        src="https://www.lifeinnorway.net/wp-content/uploads/2023/03/A6C5C657-6C56-41EA-BFC3-FFC04FD5DFF7-1536x853.jpeg"/>
+        <br/>
+        
+        Loading a local image: <br/>
+
+        <img src="Teslarobot.jpg"
+        width="400px"/>
+
+        <h2>Text fields</h2>
+<!-----------------------------------------------------------Input form------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->        
+        <form id="text-fields">
+            <label for="text-fields-username">Username:</label>
+            <input id="text-fields-username" placeholder="jdoe"/><br/>  <!--The characters after the placeholder are in gray font and appear on the form -->
+            <label for="text-fields-password">Password:</label>
+            <input type="password" id="text-fields-password"
+                   value="123@#$asd"/><br/>                             
+            <label for="text-fields-first-name">First name:</label>
+            <input type="text" id="text-fields-first-name"
+                   title="John"/><br/>                                  <!-- title refers to the little hint when the mouse near the input-->
+            <label for="text-fields-last-name">Last name:</label>
+            <input type="text" id="text-fields-last-name"
+          placeholder="Doe" value="Wonderland"/>                        <!-- Default value for the Last name is WonderLand-->
+
+        </form>
+
+        <h2>Text boxes</h2>
+<!-----------------------------------------------------------Input text------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->        
+        <form id="Textarea">
+            <label>Biography:</label><br/>
+            <textarea cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </textarea>
+        </form>
+
+        <h2>Buttons</h3>
+<!-----------------------------------------------------------Simple button------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>            
+        <button type="button">Click me!</button>
+
+        <h2>File upload</h2>
+<!-----------------------------------------------------------File upload button---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->        
+        <input type="file"/>
+
+        <h2>Radio Buttons</h2>  
+<!-----------------------------------------------------------Radio Button(just choose single choice from multiple options )------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <label>Favorite movie genre:</label><br/>   
+        <input type="radio" value="COMEDY" name="radio-genre" id="radio-comedy"/>        <!-- type="radio" means that this is a radio button, value="..." defines a value for each radio button. When the form is submitted, the value of the selected radio button is sent to the server.-->
+        <label for="radio-comedy">Comedy</label><br/>                                    <!-- for attribute should have the same value as the id attribute of the form .-->
+        <input type="radio" value="DRAMA" name="radio-genre" id="radio-drama"/>          <!--name attribute defines a name for the form element. In a radio button group, the name attribute of all buttons should be the same, so that the browser knows that these buttons are a group. -->
+        <label for="radio-drama">Drama</label><br/>
+        <input type="radio" value="SCIFI" name="radio-genre" id="radio-scifi" checked/>  <!--id attribute specifies a unique identifier for an HTML element. checked means that default choose it-->
+        <label for="radio-scifi">Science Fiction</label><br/>
+        <input type="radio" value="FANTASY" name="radio-genre" id="radio-fantasy"/>
+        <label for="radio-fantasy">Fantasy</label>
+
+        <h2>Checkboxes</h2>
+<!-------------------------------------------------------------Checkboxes(allow selecting multiple choices)------------------------------------------------------------------------------->
+        <label>Favorite movie genre:</label><br/>
+        <input type="checkbox" value="COMEDY" name="check-genre" id="chkbox-comedy" checked/>
+        <label for="chkbox-comedy">Comedy</label><br/>
+
+        <input type="checkbox" value="DRAMA" name="check-genre" id="chkbox-drama"/>
+        <label for="chkbox-drama">Drama</label><br/>
+
+        <input type="checkbox" value="SCIFI" name="check-genre" id="chkbox-scifi" checked/>
+        <label for="chkbox-scifi">Science Fiction</label> <br/>
+
+        <input type="checkbox" value="FANTASY" name="check-genre" id="chkbox-fantasy"/>
+        <label for="chkbox-fantasy">Fantasy</label>
+
+        <h2>Dropdowns</h2>
+        
+        <h3>Select One</h3>
+<!-------------------------------------------------------------Dropdown(allow selecting multiple choices)------------------------------------------------------------------------------->        
+        <label for="select-one-genre"> Favorite movie genre: </label><br/>
+        <select id="select-one-genre">
+            <option value="COMEDY">Comedy</option>
+            <option value="DRAMA">Drama</option>
+            <option selected value="SCIFI">Science Fiction</option>
+            <option value="FANTASY">Fantasy</option>
+        </select>
+
+        <h3>Select many</h3>
+
+        <label for="select-many-genre"> Favorite movie genres: </label><br/>
+        <select id="select-many-genre" multiple>
+            <option selected value="COMEDY">Comedy</option>
+            <option value="DRAMA">Drama</option>
+            <option selected value="SCIFI">Science Fiction</option>
+            <option value="FANTASY">Fantasy</option>
+        </select>
+
+        <h2>Other HTML field types</h2>
+<!---------------------------------------------------------Date/number/range/Email------------------------------------------------------------------------------->        
+        <label for="text-fields-email">Email: </label>
+        <input type="email" placeholder="jode@somewhere.com" id="text-fields-email"/> <br/>
+        <label for="text-fields-salary-start"> Starting salary: </label>
+        <input type="number" id="text-fields-salary-start" placeholder="1000" value="100000"/> <br/>
+        <label for="text-fields-rating"> Rating: </label>
+        <input type="range" id="text-fields-rating" placeholder="Doe" max="5" value="4"/> <br/>
+        <label for="text-fields-dob"> Date of birth: </label>
+        <input type="date" id="text-fields-dob" value="2000-01-01"/> <br/>
+
+        <h2>Anchor tag</h2>
+<!---------------------------------------------------------Anchor tag------------------------------------------------------------------------------->             
+        Please
+        <a href="https://www.lipsum.com">Click here</a>
+        to get dummy text <br/>
+
+        Checkout my <a href="other-page.html">other page</a>
+
+
+
+    </body>
+</html>

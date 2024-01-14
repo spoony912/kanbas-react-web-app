@@ -1,0 +1,76 @@
+<html>
+    <body>
+        <label for="select-one-grade"></label>
+        <select id="select-one-grade">
+            <option selected value="GRADEBOOK">Gradebook</option>
+        </select>
+        <button type="button">Import</button>
+        <label for="select-one-grade-way"></label>
+        <select id="select-one-grade-way">
+            <option selected value="EXPORT">Export</option>
+        </select>
+        <button type="button">Configure</button>
+        <br/>
+        <h2>Student Names</h2>
+        <form id="student-names">
+            <label for="search-student-names"></label>
+            <input id="search-student-names" placeholder="Search Students"/><br/>
+        </form>
+        <h2>
+            Assignment Names 
+        </h2>
+        <p>
+            <form id="assignment-names">
+                <label for="search-assignment-names"></label>
+                <input id="search-assignment-names" placeholder="Search Assignments"/><br/>
+            </form>
+            <button type="button">Apply Filters</button>
+        </p>  
+
+
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>A1 SETUP Out of 100</th>
+                    <th>A2 HTML Out of 100</th>
+                    <th>A3 CSS Out of 100</th>
+                    <th>A4 BOOTSTRAP Out of 100</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice Wonderland</td>
+                    <td>98</td>
+                    <td>100</td>
+                    <td>87</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>Princes Leia</td>
+                    <td>100</td>
+                    <td>98</td>
+                    <td><input type="text" placeholder="91"/>
+                    </td>
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>Luke Skywalker</td>
+                    <td>83</td>
+                    <td>89</td>
+                    <td>92</td>
+                    <td><input type="text" placeholder="84"/></td>
+                
+                </tr>
+                <tr>
+                    <td>Rain OY</td>
+                    <td><input type="text" placeholder="100"/></td>
+                    <td>99</td>
+                    <td>96</td>
+                    <td>97</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

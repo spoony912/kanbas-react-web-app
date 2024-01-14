@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <style>
+            .link-text {
+                color: blue;
+            }
+            .external-link-icon {
+                width: 28px;
+                vertical-align: middle;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Jose Annunziato</h1>
+        <p>
+            Name:*<input type="text" value="Jose Annunziato"> 
+            Pronouns:
+            <select>
+                <option selected>None</option>
+                <option>He/His</option>
+                <option>She/Her</option>
+                <option>They</option>
+            </select>
+            <br/>
+            Title: <input type="text">
+        </p>
+        <h2>Contact</h2>
+        No registered services, you can add some on the <a href="/Kanbas/Account/Settings/screen.html">settings</a> page.
+        
+        <h2>Biography</h2>
+        Faculty, Software Engineer, AI, Space, and renewables enthusiast.
+        <br/>
+        <textarea cols="70" rows="3">Faculty, Software Engineer, AI, Space, and renewables enthusiast.</textarea>
+        
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://www.youtube.com" class="link-text" target="_blank">
+                YouTube <img src="link-icon.png" class="external-link-icon"></a>
+            <span style="color: blue;">Links to an external site.</span></li>
+        </ul>
+        <table width="35%">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        URL
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value="YouTube"/> →
+                    </td>
+                    <td>
+                        <input type="text" value="https://www.youtube.com"/> <a href="#">Remove</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button">Add another link</button>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button"> Cancel </button> <button type="button" onclick="window.location.href='/Kanbas/Account/Profile/screen.html';"> Save Profile </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="window.location.href='/Kanbas/Account/Profile/Edit/screen.html';">Edit Profile</button> 
+                        <button type="button" onclick="window.location.href='/Kanbas/Account/Profile/screen.html';">Cancel Editing</button>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

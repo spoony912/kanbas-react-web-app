@@ -1,0 +1,74 @@
+<html>
+    <body>
+        <select>
+            <option selected value="SPEED GRADER">SpeedGrader</option>
+        </select>
+        <h2>Assignment Name</h2>
+        <input type="text" value="A1 - ENV + HTML">
+        <br/>
+        <br/>
+        <textarea cols="25" rows="2">This is the assignment description.</textarea>
+        <br/>
+        <p>
+            Points   <br/>                        
+            <input type="text" value="100"/>                     
+        </p>
+        <p>
+            Assignment Group <br/>
+            <select>
+                <option selected value="ASSIGNMENTS">ASSIGNMENTS</option>
+            </select>
+        </p>   
+        <p>
+            Display Grade as<br/>
+            <select>
+                <option selected value="PERCENTAGE">Percentage</option>
+            </select>
+        </p> 
+        <p>
+            Submission type <br/>
+            <select>
+                <option selected value="ONLINE">Online</option>
+            </select>
+        </p>
+        <label>Online Entry Options</label><br/>
+        <input type="checkbox" value="TEXT ENTRY" name="check-option" id="chkbox-text-entry"/>
+        <label for="chkbox-text-entry">Text Entry</label><br/>
+
+        <input type="checkbox" value="WEBSITE URL" name="check-option" id="chkbox-website-url"/>
+        <label for="chkbox-website-url">Website URL</label><br/>
+
+        <input type="checkbox" value="MEDIA RECORDINGS" name="check-option" id="chkbox-media-recordings" />
+        <label for="chkbox-media-recordings">Media Recordings</label> <br/>
+
+        <input type="checkbox" value="STUDENT ANNOTATION" name="check-option" id="chkbox-student-annatation"/>
+        <label for="chkbox-student-annatation">Student Annotation</label> <br/>
+
+        <input type="checkbox" value="FILE UPLOADS" name="check-option" id="chkbox-file-uploads"/>
+        <label for="chkbox-file-uploads">File Uploads</label>
+
+        <p>
+            Assign <br/>
+            Assign to <br/>
+            <input type="text" value="Everyone">
+            <br/>
+        </p>
+        <p>   
+            <label for="text-fields-Due"> Due </label> <br/>
+            <input type="date" id="text-fields-Due" value="2021-01-01"/> 
+        </p> 
+        <p>
+            <label for="text-fields-Av-From"> Available from </label> <br/>
+            <input type="date" id="text-fields-Av-From" value="2021-01-01"/>
+        </p>
+        
+        <p>
+            <label for="text-fields-Until"> Until </label> <br/>
+            <input type="date" id="text-fields-Until" value="2021-01-01"/> 
+        </p>
+        
+        <button type="button" onclick="window.location.href='/Kanbas/Courses/Assignments/screen.html';">Cancel</button>   <!--use onlick and window.location.href attribute -->
+        <button type="button" onclick="window.location.href='/Kanbas/Courses/Assignments/screen.html';">Save</button>
+
+    </body>
+</html>
