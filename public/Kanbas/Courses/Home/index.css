@@ -1,0 +1,11 @@
+.wd-no-underline {
+    color:#000;
+    text-decoration: none;
+}
+.wd-hyperlink a, .wd-hyperlink span {
+    text-decoration: none!important;
+}
+.wd-smalltext {
+    color:#8f8f8f;
+    font-size: .8em;
+}

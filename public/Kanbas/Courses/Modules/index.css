@@ -1,0 +1,63 @@
+.wd-modules,
+.wd-modules * {
+  border-radius: 0%;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.wd-modules {
+  margin: 5px;
+}
+
+.wd-modules > li {
+  background-color: lightgray;
+  border: 1px solid gray !important;
+  border-left: none !important;
+}
+
+.wd-modules > li > div {
+  padding: 6px;
+  border-left: 1px solid gray !important;
+}
+
+.wd-modules > li > ul > li {
+  padding: 5px;
+  border-top: 1px solid gray !important;
+  border-left: 2px solid green;
+}
+
+.wd-modules > li {
+  margin-bottom: 20px;
+}
+.wd-flex-grow {
+  flex-grow: 1!important;
+}
+.wd-header {
+  width: 95%!important;
+}
+.container-fluid {
+  padding:0!important;
+}
+.wd-full-width {
+  width:100%!important;
+}
+.wd-black-text {
+  color:#000;
+}
+.wd-dropdown-icon {
+  font-size: 1.1rem;
+
+}
+.wd-green-left-border {
+  border-left: 5px solid green;
+
+}
+.wd-eclipse {
+  size: 10px;
+  border:1px solid #494848;
+  border-radius: 40%;
+  display: incline-block;
+  padding: 3px;
+  text-align: center;
+}
