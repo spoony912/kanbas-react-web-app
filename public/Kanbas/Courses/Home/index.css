@@ -9,3 +9,19 @@
     color:#8f8f8f;
     font-size: .8em;
 }
+
+.wd-small-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    /* position: -webkit-sticky;
+    position: sticky; */
+    top: 0; 
+    left: 0;
+  }
+
+  .wd-small-navigation li a{
+    color:red;
+  }
