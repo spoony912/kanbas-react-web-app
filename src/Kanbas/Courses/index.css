@@ -1,0 +1,76 @@
+.breadcrumb-custom {
+    --bs-breadcrumb-divider: '>';
+  }
+.wd-bars-color {
+    color: red!important;
+}
+.wd-flex-grow {
+    flex-grow: 1!important;
+} 
+.wd-header-font {
+    font-size: 1.2rem;
+}
+.wd-red-text {
+    color: red!important;
+}
+.wd-black-text {
+    color: #000;
+}
+.wd-full-width {
+    width: 100%!important;
+}
+.d-flex {
+    display: flex!important;
+}
+.wd-no-underline{
+    text-decoration: none;
+    color: black;
+}
+.wd-smalltext {
+    color:#8f8f8f;
+    font-size: .8em;
+}
+.wd-hyperlink span {
+    color: red !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+.wd-hyperlink a{
+    text-decoration: none !important;
+}
+
+
+.wd-no-underline{
+    text-decoration: none;
+    color: black;
+}
+.wd-eclipse {
+    size: 10px;
+    border:1px solid #494848;
+    border-radius: 40%;
+    display: incline-block;
+    padding: 3px;
+    text-align: center;
+}
+.wd-gradebook {
+    font-size: 1.2em;
+}
+.wd-headers-align{
+    text-align: center !important;
+}
+.wd-small-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
+    left: 0;
+  }
+
+  .wd-small-navigation li a{
+    color:red;
+  }
