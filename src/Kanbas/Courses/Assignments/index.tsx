@@ -1,13 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlus, FaPlusCircle } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import { assignments } from "../../Database";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "../index.css"
 import { HiEllipsisVertical, HiPlus } from "react-icons/hi2";
+import { deleteAssignment } from "./assignmentsReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { KanbasState } from "../../store";
+
+
+// ------- interface
+interface Assignment {
+    _id: string;
+    title: string;
+    due: string;
+    totalPoints: number;
+    course: string;
+}
 
 function Assignments() {
     const {courseId} = useParams();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const assignments = useSelector((state:KanbasState) => state.assignmentsReducer.assignments);
+
     const assignmentList = assignments.filter( (assignment) => assignment.course === courseId);
+
+    const AddAssignment = () => {
+        navigate(`/Kanbas/Courses/${courseId}/Assignments/New`);
+    };
+
+    const DeleteAssignment = (assignmentId: string) => {
+      if (window.confirm("Are you sure you want to delete this assignment?")) {
+        dispatch(deleteAssignment(assignmentId));
+      }
+    }
 
     return(
         <>
@@ -21,7 +47,7 @@ function Assignments() {
                         </form>
                         <div className="float-end">
                             <button type="button" className="btn btn-outline-dark btn-light me-1"> + Group</button>
-                            <button type="button" className="btn btn-danger me-1"> + Assignment</button>
+                            <button type="button" className="btn btn-danger me-1" onClick = {AddAssignment}> + Assignment</button>
                             <button type="button" className="btn btn-outline-dark btn-light me-1">
                                  <HiEllipsisVertical />
                             </button>
@@ -44,15 +70,20 @@ function Assignments() {
                   </div>
                   <ul className="list-group">
                     {assignmentList.map((assignment) => (
-                      <li className="list-group-item">
+                      <li key={assignment._id} className="list-group-item">
                         <FaEllipsisV className="me-2" />
                         <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="wd-no-underline">{assignment.title}</Link>
                         <span className="float-end">
                           <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
                           <hr/>
                           <span className="wd-smalltext">
-                              Due: {assignment.due}, Points: {assignment.totalPoints}
+                              Due: {assignment.due} | Points: {assignment.totalPoints}
                           </span>
+                          <button type="button" className="btn btn-danger float-end me-1" onClick={ () => {
+                            if(window.confirm("Are you sure you want to delete this assignment?")){
+                              dispatch(deleteAssignment(assignment._id));
+                            }
+                          }}>Delete</button>
                       </li>))}
                   </ul>
                 </li>
@@ -63,6 +94,7 @@ function Assignments() {
 
         </>
     )
+        }
 
-}
+      
 export default Assignments;

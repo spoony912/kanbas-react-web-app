@@ -1,15 +1,23 @@
-import React from "react";
+import React , {useState} from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { assignments } from "../../../Database";
 import { HiCheckCircle } from "react-icons/hi";
 import { HiEllipsisVertical } from "react-icons/hi2";
-
+import { addAssignment, updateAssignment } from "../assignmentsReducer";
+import { useDispatch, useSelector } from "react-redux";
 import "../../index.css";
+import { KanbasState } from "../../../store";
+
 function AssignmentEditor() {
     const { assignmentId } = useParams();
-    const assignment = assignments.find((assignment) => assignment._id === assignmentId);
     const { courseId } = useParams();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const assignments = useSelector((state:KanbasState) => state.assignmentsReducer.assignments);
+    const assignment = assignments.find( (assignment) => assignment._id === assignmentId);
+
+
     const handleSave = () => {
         console.log("Actually saving assignment TBD in later assignments");
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);

@@ -1,7 +1,6 @@
-import {courses} from "../../Kanbas/Database";
+import * as db from "../Database";
 import { Navigate, Route, Routes, useParams, useLocation, Link } from "react-router-dom";
 import { HiBars3, HiMiniEye} from "react-icons/hi2";
-
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -12,7 +11,22 @@ import "./index.css";
 import { FaBars, FaCaretDown, FaTimes,FaTachometerAlt, FaRegUserCircle, FaBook, FaRegCalendarAlt, FaInbox, FaHistory, FaLaptop, FaArrowAltCircleRight, FaQuestionCircle} from "react-icons/fa";
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-function Courses() {
+// ----- interface
+interface Course {
+  _id: string;
+  name: string;
+  number: string;
+  startDate: string;
+  endDate: string;
+  image?: string;   // Assuming that image is optional
+}
+
+interface CoursesProps {
+  courses: Course[];
+}
+
+
+function Courses( {courses}: CoursesProps) {
     const { courseId } = useParams();
     const course = courses.find((course) => course._id === courseId);
 
