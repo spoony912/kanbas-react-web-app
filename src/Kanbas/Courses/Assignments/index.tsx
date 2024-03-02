@@ -12,6 +12,7 @@ import { KanbasState } from "../../store";
 interface Assignment {
     _id: string;
     title: string;
+    description: string;
     due: string;
     totalPoints: number;
     course: string;
@@ -26,7 +27,7 @@ function Assignments() {
     const assignmentList = assignments.filter( (assignment) => assignment.course === courseId);
 
     const AddAssignment = () => {
-        navigate(`/Kanbas/Courses/${courseId}/Assignments/New`);
+        navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
     };
 
     const DeleteAssignment = (assignmentId: string) => {
@@ -40,6 +41,7 @@ function Assignments() {
             
             <div className="wd-full-width">
               <div className="me-4">
+              <script src="../../../bootstrap/js/bootstrap.bundle.min.js"></script>
                 <div className="container-fluid me-2 ms-1 me-4">
                     <div className="d-flex justify-content-between me-3">
                         <form className="w-40">
@@ -80,9 +82,7 @@ function Assignments() {
                               Due: {assignment.due} | Points: {assignment.totalPoints}
                           </span>
                           <button type="button" className="btn btn-danger float-end me-1" onClick={ () => {
-                            if(window.confirm("Are you sure you want to delete this assignment?")){
-                              dispatch(deleteAssignment(assignment._id));
-                            }
+                            DeleteAssignment(assignment._id);
                           }}>Delete</button>
                       </li>))}
                   </ul>

@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React , {useEffect, useState} from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { assignments } from "../../../Database";
 import { HiCheckCircle } from "react-icons/hi";
@@ -9,19 +9,102 @@ import "../../index.css";
 import { KanbasState } from "../../../store";
 
 function AssignmentEditor() {
+
     const { assignmentId } = useParams();
     const { courseId } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const assignments = useSelector((state:KanbasState) => state.assignmentsReducer.assignments);
-    const assignment = assignments.find( (assignment) => assignment._id === assignmentId);
+    const [assignment, setAssignment] = useState(
+        {
+            _id: null,
+            title: "",
+            description: "",
+            due: "",
+            totalPoints: 0,
+            course: "",
+        }
+    );
 
+    useEffect(() => {
+        if(assignmentId === "new") {
+            setAssignment({
+                _id: null,
+                title: "",
+                description: "",
+                due: "",
+                totalPoints: 0,
+                course: courseId ?? "",
+            });
+        } else {
+            const existedAssignment = assignments.find((a) => a._id === assignmentId);
+            if(existedAssignment) {
+                setAssignment(existedAssignment);
+            }
+            else {
+                // can not find the assignment
+            }
+            
+        }
+    }, [assignmentId, assignments, courseId]);
 
-    const handleSave = () => {
-        console.log("Actually saving assignment TBD in later assignments");
-        navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+    const [newAssignment, setNewAssignment] = useState( () => {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id') === "new";
+    });
+
+    const handleSave = async() => {
+        if(assignmentId === "new") {
+            const newId = new Date().getTime().toString();
+            const newAssignment = {
+                ...assignment, 
+                _id: newId,
+                course: courseId ?? "",
+            };
+            const actionResult = dispatch(addAssignment(newAssignment));
+            console.log('New Assignment added:', actionResult.payload);
+            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+        } else {
+            const updatedAssignment = {
+                ...assignment,
+                course: courseId ?? "",
+            };
+            dispatch(updateAssignment(assignment));
+            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+        }
+        
     };
+
+    const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setAssignment({
+            ...assignment,
+            title: e.target.value,
+        });
+    };
+
+    const handleDecriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setAssignment({
+            ...assignment,
+            description: e.target.value,
+        });
+    };
+
+    const handleDueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setAssignment({
+            ...assignment,
+            due: e.target.value,
+        });
+    };
+
+    const handleTotalPointsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setAssignment({
+            ...assignment,
+            totalPoints: parseInt(e.target.value),
+        });
+    };
+
+
     return (
         <>
             <div className="d-flex justify-content-end me-4 mt-2">
@@ -34,9 +117,18 @@ function AssignmentEditor() {
             </div>
             <hr className="me-4" />
             <div>
-                <span className="mb-1">Assignment Name</span>
-                <input value={assignment?.title} className="form-control mb-2" />
-                <textarea className="form-control mt-4 pb-2 pt-2" rows={4}></textarea>
+                
+                <label htmlFor="assignmentTitle" className="form-label">Assignment Name</label>
+                <input 
+                    id = "assignmentTitle"
+                    className="form-control mb-2"
+                    value={newAssignment ? "" : assignment.title} 
+                    onChange={handleTitleChange} />
+                <textarea 
+                    className="form-control mt-4 pb-2 pt-2" 
+                    rows={4}
+                    value={newAssignment ? "" : assignment.description}
+                    onChange = {handleDecriptionChange} ></textarea>
             </div>
             <div className="container">
                 <div className="d-flex justify-content-left">
@@ -44,7 +136,14 @@ function AssignmentEditor() {
                         <div className="mt-4 row">
                             <label htmlFor="points" className="col-sm-4 col-form-label text-end">Points</label>
                             <div className="col-sm-8">
-                                <input type="number" className="form-control" id="points" min="0" max="100" value="100" />
+                                <input 
+                                    type="number" 
+                                    className="form-control" 
+                                    id="points" 
+                                    min="0" 
+                                    max="100" 
+                                    value={newAssignment ? "" : assignment.totalPoints}
+                                    onChange = {handleTotalPointsChange} />
                             </div>
                         </div>
                         <div className="mt-4 row">
@@ -152,13 +251,14 @@ function AssignmentEditor() {
                         <input type="checkbox" className="me-1" />Notify users that this content has changed
                     </label>
                     <div>
-                        
-                        <button onClick={handleSave} className="btn btn-success ms-2 float-end ">
-                            Save
-                        </button>
-                        <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-danger float-end">
+                        <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-secondary btn-outline-dark btn-lg btn-light me-2">
                             Cancel
                         </Link>
+
+                        <button type="button" onClick={handleSave} className="btn btn-primary btn-lg btn-danger ">
+                            Save
+                        </button>
+                        
                     </div>
                </div> 
             </form>
