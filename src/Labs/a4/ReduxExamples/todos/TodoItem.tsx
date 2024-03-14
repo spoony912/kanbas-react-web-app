@@ -9,8 +9,9 @@ function TodoItem({todo}:{todo: TodoType}) {
     const dispatch = useDispatch();
     return (
         <li key={todo.id} className="list-group-item">
-            <button onClick={() => dispatch(deleteTodo(todo.id))}> Delete </button>
-            <button onClick={() => dispatch(setTodo(todo))}> Edit </button>
+            <button className="btn btn-danger" onClick={() => dispatch(deleteTodo(todo.id))}> Delete  </button> &nbsp;
+            <button className="btn btn-warning" onClick={() => dispatch(setTodo(todo))}> Edit </button>
+            &nbsp;
             {todo.title}
         </li>
     );

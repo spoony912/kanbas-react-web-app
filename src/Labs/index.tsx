@@ -13,13 +13,13 @@ function Labs() {
             
             <div className="container-fluid">
 
-        <Nav />
-        <Routes>
-            <Route path="/" element={<Navigate to="/Labs/a3" />} />
-            <Route path="a3" element={<Assignment3 />} />
-            <Route path="a4" element={<Assignment4 />} />
-        </Routes>
-      
+                <Nav />
+                <Routes>
+                    <Route path="/" element={<Navigate to="/Labs/a3" />} />
+                    <Route path="a3" element={<Assignment3 />} />
+                    <Route path="a4" element={<Assignment4 />} />
+                </Routes>
+
 
             </div>
         </Provider>    

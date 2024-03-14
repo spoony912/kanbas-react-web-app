@@ -9,6 +9,7 @@ function ObjectStateVariable() {
         value={person.name}
         onChange={(e) => setPerson({ ...person, name: e.target.value })}
       />
+      <br/>
       <input
         value={person.age}
         onChange={(e) => setPerson({ ...person,

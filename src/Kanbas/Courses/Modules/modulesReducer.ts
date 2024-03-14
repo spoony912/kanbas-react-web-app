@@ -39,6 +39,9 @@ const modulesSlice = createSlice({
 });
 
 
-export const { addModule, deleteModule,
-  updateModule, setModule } = modulesSlice.actions;
+export const { 
+  addModule, 
+  deleteModule,
+  updateModule, 
+  setModule } = modulesSlice.actions;
 export default modulesSlice.reducer;

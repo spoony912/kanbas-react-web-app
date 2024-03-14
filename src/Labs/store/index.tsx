@@ -9,15 +9,20 @@ export type TodoType = {
 };
 
 export interface LabState {
+
   todosReducer: {
         todos: TodoType[];
         todo: TodoType;
       };
     
-  helloReducer: { message: string; };
+  helloReducer: { 
+    message: string; 
+  };
+
   counterReducer: {
     count: number;
   };
+  
   addReducer: {
     sum: number;
   };
